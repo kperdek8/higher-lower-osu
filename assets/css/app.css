@@ -1,0 +1,84 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Additional font settings for specific elements if needed */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Text formatting visible on any background */
+
+.clear-text {
+  color: white;
+  font-size: 20px;
+  text-shadow:
+      0.07em 0 black,
+      0 0.07em black,
+      -0.07em 0 black,
+      0 -0.07em black;
+}
+
+.clear-box {
+  color: yellow;
+  font-size: 20px;
+  text-shadow:
+    0.07em 0 black,
+    0 0.07em black,
+    -0.07em 0 black,
+    0 -0.07em black;
+  box-shadow:
+      0.05em 0 black,
+      0 0.05em black,
+      -0.05em 0 black,
+      0 -0.05em black,
+      inset 0.05em 0 black,
+      inset 0 0.05em black,
+      inset -0.05em 0 black,
+      inset 0 -0.05em black;
+}
+
+.clear-box:hover {
+  box-shadow:
+      0.05em 0 black,
+      0 0.05em black,
+      -0.05em 0 black,
+      0 -0.05em black; /* Only outer shadow on hover */
+}
+/* Fade-in animation */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hidden footer */
+
+#hover-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+#hidden-footer {
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(100%);
+}
+
+#hover-area:hover + #hidden-footer,
+#hidden-footer:hover {
+  transform: translateY(0);
+} 

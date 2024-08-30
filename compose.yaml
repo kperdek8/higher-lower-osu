@@ -1,0 +1,43 @@
+services:
+  phoenix:
+    build:
+      context: .
+    environment:
+      DATABASE_URL: ecto://postgres:postgres@db/higherlower_osu_dev
+      SECRET_KEY_BASE: 3T4UQW9x8vN+8POUi4vjkR9M07BXEweBIoiKFDgcFrZ7XTCJIQu1UOrc6U//Gco5
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGDATABASE: higherlower_osu_dev
+      PGPORT: 5432
+      PGHOST: db
+      MIX_ENV: dev
+      PORT: 4000
+    networks:
+      - inside
+    ports:
+      - '4000:4000'
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/deps
+      - /app/_build
+
+  db:
+    image: postgres:16.3
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: higherlower_osu_dev
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+    networks:
+      - inside
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+networks:
+  inside:
+    driver: bridge
+volumes:
+  pgdata:
