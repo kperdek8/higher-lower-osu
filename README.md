@@ -44,12 +44,7 @@
 
 Higher Lower Osu! is a game where players compare the popularity of different osu! beatmap sets by guessing which one has higher or lower statistics, such as play count or favorite count. The goal is to guess correctly and see how many consecutive correct guesses you can make.
 
-Below there is showcase of website with small samplesize of ~8 beatmapsets per game mode.
-
-<video width="1080" height="720" controls>
-  <source src="media/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+Watch showcase of website with small samplesize of ~8 beatmapsets per game mode [here](https://kperdek8.github.io/higher-lower-osu/media/demo.mp4).
 
 ### Technologies used
 
